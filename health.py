@@ -13,7 +13,6 @@ def say(name):
 __timenow__=datetime.datetime.now().hour
 __clientname__=pg.prompt(text="Please enter your name", title='Client Information')
 __clientgender__=pg.prompt(text="Please enter your Gender", title='Client Information')
-
 if __clientgender__=='male' or __clientgender__=='Male' or __clientgender__=='female' or __clientgender__=='Female':
     pass
 else:
