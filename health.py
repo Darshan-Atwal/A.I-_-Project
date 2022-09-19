@@ -50,7 +50,7 @@ def takecommand():
 print('How can i help you?\n: ')
 while True:
     inp=input('--> ')
-    if inp=='google search':
+    if inp=='search':
         print('what do you want to search: ')
         inps=input('--> ')
         time.sleep(0.9)
