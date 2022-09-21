@@ -3,7 +3,6 @@ import webbrowser as wb
 try:
     import pywhatkit as pwt
 except Exception as e:
-    time.sleep(1)
     print('cant connect to the internet')
     print(f'Please check your internet connection')
 import speech_recognition as sr
@@ -80,7 +79,7 @@ try:
             try:
                 pwt.search('cure for '+inps)
                 result=googlescrap.summary()
-                say('\n'+result+'\n')
+                say(result)
             except Exception as e:
                 print('Unable to fetch callable data at this moment!')
         elif inp=="Hospitals near me":
@@ -88,13 +87,15 @@ try:
                 pwt.search('Hospitals near '+__clientLoaction__)
             except Exception as e:
                 print(e)
+        elif inp=='Diagnose a disease':
+            say('Please wait till i fetch the best site for you.')
+            time.sleep(1)
+            wb.open_new_tab('https://symptomate.com/diagnosis/0')
         elif inp=='ai -help':
             print('Type "search" to search on google')
             print('Type "cure for disease" to find an cure')
-            print('Type "indian healthcare website" for accessing the indian healthcare website')
+            print('Type "Indian healthcare website" for accessing the indian healthcare website')
             print('Type "Hospitals near me" to see the nearest hospitals ')
-            
-
             print('Type "quit" to quit')
 
         else:
